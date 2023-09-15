@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Mascotas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .navbarPablo{
+            background: darkgreen;
+        }
+        body{
+            background-image: url("travel_can_logo.png");
+        }
+    </style>
+
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light navbarPablo">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{'/Viajes'}">Viajes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{'/Mascotas'}">Mascotas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{'/Lugares'}">Lugares</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="title">
+
+    <h1 style="color: black">Nueva Mascota</h1>
+    <hr/>
+    <form method="post" th:action="@{'/nuevaMascota'}">
+        <div class="mb-3">
+            <label for="nombre">Nombre</label>
+            <input name="nombre" type="text" class="form-control" id="nombre">
+        </div>
+        <div class="mb-3">
+            <label for="genero">Genero</label>
+            <input name="genero" type="text" class="form-control" id="genero">
+        </div>
+        <div class="mb-3">
+            <label for="edad">Edad</label>
+            <input name="edad" type="text" class="form-control" id="edad">
+        </div>
+        <div class="mb-3">
+            <label for="vacunado">Vacunado</label>
+            <input name="vacunado" type="text" class="form-control" id="vacunado">
+        </div>
+        <div class="mb-3">
+            <label for="desparasitado">Desparasitado</label>
+            <input name="desparasitado" type="text" class="form-control" id="desparasitado">
+        </div>
+        <a th:href="@{'/lab3/jugador'}" class="btn btn-danger">Cancelar</a>
+        <button type="submit" class="btn btn-primary">Registrar</button>
+    </form>
+
+</div>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
